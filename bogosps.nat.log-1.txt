@@ -1,0 +1,15 @@
+ *** chet_nechet = 00
+[01] Calibrating delay loop.. ok - 280628482 BogoSps (s = +00000000006531173)
+[02] Calibrating delay loop.. ok - 448994964 BogoSps (s = +00000002056302907)
+[04] Calibrating delay loop.. ok - 641420918 BogoSps (s = +00000004653227064)
+[08] Calibrating delay loop.. ok - 513151019 BogoSps (s = +00000011962875993)
+[16] Calibrating delay loop.. ok - 608829368 BogoSps (s = +00000023027516780)
+[32] Calibrating delay loop.. ok - 665197072 BogoSps (s = +00000037801135661)
+ *** chet_nechet = 01
+[01] Calibrating delay loop.. ok - 112400837 BogoSps (s = +00000002049771734)
+[02] Calibrating delay loop.. ok - 213833158 BogoSps (s = +00000004099543468)
+[04] Calibrating delay loop.. ok - 466906796 BogoSps (s = +00000008199086936)
+[08] Calibrating delay loop.. ok - 531426448 BogoSps (s = +00000016398173872)
+[16] Calibrating delay loop.. ok - 449007356 BogoSps (s = +00000032796347744)
+[32] Calibrating delay loop.. ok - 533652984 BogoSps (s = +00000065592695488)
+thput=6.41421e+08 BogoSps, latency=5.82716e-10 sec, perf=1.10074e+18 BogoSps^2
