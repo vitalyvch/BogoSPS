@@ -107,7 +107,8 @@ main(void)
 	latency = bogo_time[1] - bogo_time[0];
 	performance = bogo_sps[0] / latency;
 
-	printf ("thput=%g, latency=%g, perf=%g\n", bogo_sps[0], latency, performance);
+	printf ("thput=%g BogoSps, latency=%g sec, perf=%g BogoSps^2\n",
+	        bogo_sps[0], latency, performance);
 	fflush(stdout);
 
 	return res;
