@@ -1,0 +1,16 @@
+Want to impress your friends?  Be the first person
+on your block to run the standalone bogosps program.
+Now you can measure BogoSps all day long.  This could
+be the "killer app" that Linux has been waiting for.
+
+"BogoSps" is a standalone program that displays your system
+performance.
+
+A man page and make file are included. Detailed instructions for
+building, running, and installing are in the file INSTALLNG.
+
+This version of BogorSs is portable and should run on any system
+that supports an ANSI C compiler and library.
+
+P.S. Don't forget to post your results to the net and impress
+thousands of people around the world!

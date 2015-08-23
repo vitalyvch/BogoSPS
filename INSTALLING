@@ -1,0 +1,8 @@
+To build for Linux under gcc, just type "make". If using a compiler
+other than GNU gcc, edit the compile options in the makefile.
+
+Run the program as "bogosps".
+
+Install the binary and man page using "make install" as root (change
+the makefile if you don't want them put in /usr/local/bin and
+/usr/local/man).

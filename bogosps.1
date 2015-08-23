@@ -1,0 +1,40 @@
+.TH BOGOSPS 1 "23 Aug 2015" "Linux" "User Commands"
+.SH NAME
+bogosps \- BogoSps Benchmark Program
+
+.SH SYNOPSIS
+
+bogosps
+
+.SH DESCRIPTION
+
+.B BogoSps
+is a standalone version of the benchmark program for comparing performance of similar CPU cores.
+
+It is expected to be especially useful to compare virtualized and native performance.
+
+.PP
+.SH "COMMAND\-LINE OPTIONS"
+
+No options are currently supported.
+
+.SH EXAMPLES
+.TP 0.5i
+.B bogosps
+
+.SH PORTABILITY
+.B BogoSps
+should compile on any ANSI C conforming system.
+
+.SH BUGS/LIMITATIONS
+.PP
+It is not expected to use this BM to compare CPU cores with different arches, such as x86 and ARM.
+
+The "Bogo" in BogoSps stands for bogus. See also the "New Hacker's Dictionary"
+(sometimes known as the "Jargon File") for a definition of bogosity and bogon
+particle physics.
+
+.SH AUTHOR
+.B BogoSps
+was written by Vitaly Chernooky (vitaly.v.ch@gmail.com) based on code
+from the BogoMIPS 1.3. Additional changes suggested by LOR guys.
