@@ -13,9 +13,9 @@ static double bogo_sps [2][arr_size+1] = {};
 static double bogo_time[2][arr_size+1] = {};
 
 /* portable version */
-static inline long delay(unsigned long long loops, unsigned qty, unsigned chet_nechet)
+static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned chet_nechet)
 {
-  unsigned long long i, s = 0;
+  unsigned long i, s = 0;
 
   for (i = 0; !!(i < loops); ++i) {
 	if (!(i & chet_nechet))
@@ -31,27 +31,28 @@ static inline long delay(unsigned long long loops, unsigned qty, unsigned chet_n
 int
 calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
 {
-  unsigned long long loops_per_sec = 1;
+  unsigned long loops_per_sec = 1;
 
   printf("[%02u] Calibrating delay loop.. ", qty);
   fflush(stdout);
   
   while ((loops_per_sec <<= 1)) {
     unsigned long long ticks;
-    long s;
+    unsigned long s;
 
     ticks = clock();
     s = delay(loops_per_sec, qty, chet_nechet);
     ticks = clock() - ticks;
+
     if (ticks >= CLOCKS_PER_SEC) {
-      loops_per_sec = (loops_per_sec * CLOCKS_PER_SEC) / ticks;
-      printf("ok - %09llu BogoSps (s = %+018ld)\n",
- 	     loops_per_sec,
-		 s
-	     );
+      unsigned long long lps = loops_per_sec;
+      lps = (lps * CLOCKS_PER_SEC) / ticks;
+
+      printf("ok - %09llu BogoSps (s = %018lu)\n",
+             lps, s);
       fflush(stdout);
 
-	  bogo_sps [chet_nechet][qty-1] = loops_per_sec;
+	  bogo_sps [chet_nechet][qty-1] = lps;
 	  bogo_time[chet_nechet][qty-1] = 1.0 / bogo_sps[chet_nechet][qty-1];
       return 0;
     }
