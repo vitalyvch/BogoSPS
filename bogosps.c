@@ -12,7 +12,6 @@ static long arr[arr_size+1];
 static double bogo_sps [2][arr_size+1] = {};
 static double bogo_time[2][arr_size+1] = {};
 
-/* portable version */
 static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned chet_nechet)
 {
   unsigned long i, s = 0;
@@ -28,7 +27,7 @@ static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned ch
 }
 
 
-int
+static int
 calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
 {
   unsigned long loops_per_sec = 1;

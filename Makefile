@@ -5,7 +5,7 @@
 
 # use these flags if using gcc
 CC	= gcc
-CFLAGS	= -Wall -O3 -g -fomit-frame-pointer -finline-functions -static
+CFLAGS	= -Wall -O3 -g -fomit-frame-pointer -static
 
 
 bogosps.nat bogosps.arm: bogosps.c Makefile
