@@ -12,28 +12,17 @@ static long arr[arr_size+1];
 static double bogo_sps [2][arr_size+1] = {};
 static double bogo_time[2][arr_size+1] = {};
 
-static inline long sum(unsigned qty, unsigned chet_nechet)
-{
-	unsigned i;
-
-	long s = 0;
-
-	for (i=0; !!(i<qty); ++i)
-		if (!chet_nechet)
-			s += arr[i];
-		else
-			s += arr[chet_nechet];
-
-	return s;
-}
-
 /* portable version */
-static inline long delay(long long loops, unsigned qty, unsigned chet_nechet)
+static inline long delay(unsigned long long loops, unsigned qty, unsigned chet_nechet)
 {
-  long s;
+  unsigned long long i, s = 0;
 
-  for (; !!(loops > 0); --loops)
-	  s = sum(qty, loops & chet_nechet);
+  for (i = 0; !!(i < loops); ++i) {
+	if (!(i & chet_nechet))
+		s += arr[i % qty];
+	else
+		s += arr[s % qty];
+  }
 
   return s;
 }
@@ -55,7 +44,7 @@ calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
     s = delay(loops_per_sec, qty, chet_nechet);
     ticks = clock() - ticks;
     if (ticks >= CLOCKS_PER_SEC) {
-      loops_per_sec = (loops_per_sec * CLOCKS_PER_SEC * qty) / ticks;
+      loops_per_sec = (loops_per_sec * CLOCKS_PER_SEC) / ticks;
       printf("ok - %09llu BogoSps (s = %+018ld)\n",
  	     loops_per_sec,
 		 s
