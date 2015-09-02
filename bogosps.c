@@ -16,11 +16,13 @@ static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned ch
 {
   unsigned long i, s = 0;
 
+  --qty;
+
   for (i = 0; !!(i < loops); ++i) {
 	if (!(i & chet_nechet))
-		s += arr[i % qty];
+		s += arr[i & qty];
 	else
-		s += arr[s % qty];
+		s += arr[s & qty];
   }
 
   return s;
@@ -100,7 +102,7 @@ main(void)
 		latency     = bogo_time[1][i-1] - bogo_time[0][i-1];
 		performance = bogo_sps [0][i-1] / latency;
 
-		if (prev_thput > bogo_sps[0][i-1])
+		if (prev_thput > bogo_sps[0][i-1] && i>4)
 			break;
 
 		printf ("[%02u] thput=%g BogoSps, latency=%g sec, perf=%g BogoSps^2\n",
