@@ -99,14 +99,14 @@ main(void)
 	for (i=1; i<=(arr_size+1); i*=2) {
 		double latency, performance;
 
-		latency     = bogo_time[1][i-1] - bogo_time[0][i-1];
-		performance = bogo_sps [0][i-1] / latency;
+		latency     = (bogo_time[1][i-1] - bogo_time[0][i-1]) * 1000000000;
+		performance = bogo_sps [0][i-1] / (latency * 1000000);
 
 		if (prev_thput > bogo_sps[0][i-1] && i>4)
 			break;
 
-		printf ("[%02u] thput=%g BogoSps, latency=%g sec, perf=%g BogoSps^2\n",
-				i, bogo_sps[0][i-1], latency, performance);
+		printf ("[%02u] thput=%.3f BogoMsps, latency=%.3f nsec, perf=%.3f BogoMsPsPns\n",
+				i, bogo_sps[0][i-1]/1000000, latency, performance);
 		prev_thput = bogo_sps[0][i-1];
 	}
 	fflush(stdout);
