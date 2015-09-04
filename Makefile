@@ -15,7 +15,7 @@ bogosps.nat bogosps.arm: bogosps.c Makefile
 	arm-linux-gnueabi-objdump -d --source bogosps.arm > bogosps.arm.asm
 
 clean:
-	$(RM) bogosps
+	$(RM) bogosps.nat bogosps.arm
 
 install: bogosps bogosps.1
 	cp bogosps /usr/local/bin/bogosps
