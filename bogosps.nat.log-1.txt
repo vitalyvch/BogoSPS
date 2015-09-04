@@ -1,18 +1,19 @@
  *** chet_nechet = 00
-[01] Calibrating delay loop.. ok - 061698634 BogoSps (s = 021808644559470592)
-[02] Calibrating delay loop.. ok - 062043278 BogoSps (s = 051945653156184064)
-[04] Calibrating delay loop.. ok - 062765785 BogoSps (s = 037647018608295936)
-[08] Calibrating delay loop.. ok - 062486372 BogoSps (s = 058596889993412608)
-[16] Calibrating delay loop.. ok - 062043393 BogoSps (s = 069907366300090368)
-[32] Calibrating delay loop.. ok - 062526835 BogoSps (s = 071017712056270848)
+[01] Calibrating delay loop.. ok - 507173854 BogoSps (s = 999815480564776960)
+[02] Calibrating delay loop.. ok - 508371118 BogoSps (s = 960333055782813696)
+[04] Calibrating delay loop.. ok - 508003126 BogoSps (s = 768253649435492352)
+[08] Calibrating delay loop.. ok - 508249838 BogoSps (s = 760344609967570944)
+[16] Calibrating delay loop.. ok - 507396742 BogoSps (s = 832113484861800448)
+[32] Calibrating delay loop.. ok - 507829177 BogoSps (s = 692943304110637056)
  *** chet_nechet = 01
-[01] Calibrating delay loop.. ok - 046020420 BogoSps (s = 021808644559470592)
-[02] Calibrating delay loop.. ok - 046367867 BogoSps (s = 021808644559470592)
-[04] Calibrating delay loop.. ok - 046778570 BogoSps (s = 035037495342964545)
-[08] Calibrating delay loop.. ok - 047035384 BogoSps (s = 054881535534877933)
-[16] Calibrating delay loop.. ok - 047519884 BogoSps (s = 081523306317228039)
-[32] Calibrating delay loop.. ok - 047907663 BogoSps (s = 078409241730415687)
+[01] Calibrating delay loop.. ok - 259450428 BogoSps (s = 499907740282388480)
+[02] Calibrating delay loop.. ok - 259833159 BogoSps (s = 480166527891406848)
+[04] Calibrating delay loop.. ok - 259896303 BogoSps (s = 345024576930632298)
+[08] Calibrating delay loop.. ok - 259964512 BogoSps (s = 342429448659795968)
+[16] Calibrating delay loop.. ok - 259707969 BogoSps (s = 396862270447561416)
+[32] Calibrating delay loop.. ok - 260177172 BogoSps (s = 352221436690396506)
  *** SUMMARY
-[01] thput=6.16986e+07 BogoSps, latency=5.52167e-09 sec, perf=1.11739e+16 BogoSps^2
-[02] thput=6.20433e+07 BogoSps, latency=5.44888e-09 sec, perf=1.13864e+16 BogoSps^2
-[04] thput=6.27658e+07 BogoSps, latency=5.44506e-09 sec, perf=1.15271e+16 BogoSps^2
+[01] thput=507.174 BogoMsps, latency=1.883 nsec, perf=269.402 BogoMsPsPns
+[02] thput=508.371 BogoMsps, latency=1.882 nsec, perf=270.186 BogoMsPsPns
+[04] thput=508.003 BogoMsps, latency=1.879 nsec, perf=270.330 BogoMsPsPns
+[08] thput=508.250 BogoMsps, latency=1.879 nsec, perf=270.469 BogoMsPsPns
