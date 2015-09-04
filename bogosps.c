@@ -19,10 +19,7 @@ static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned ch
   --qty;
 
   for (i = 0; !!(i < loops); ++i) {
-	if (!(i & chet_nechet))
-		s += arr[i & qty];
-	else
-		s += arr[s & qty];
+	s = arr[(!(i & chet_nechet) ? i : s) & qty];
   }
 
   return s;
