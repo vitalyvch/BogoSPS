@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 
 
 enum { arr_size=0x1f };
@@ -100,13 +101,13 @@ main(void)
 		double latency, performance;
 
 		latency     = (bogo_time[1][i-1] - bogo_time[0][i-1]) * 1000000000;
-		performance = bogo_sps [0][i-1] / (latency * 1000000);
+		performance = sqrt(bogo_sps [0][i-1] * bogo_sps[1][i-1]);
 
 		if (prev_thput > bogo_sps[0][i-1] && i>4)
 			break;
 
-		printf ("[%02u] thput=%.3f BogoMsps, latency=%.3f nsec, perf=%.3f BogoMsPsPns\n",
-				i, bogo_sps[0][i-1]/1000000, latency, performance);
+		printf ("[%02u] thput=%.3f BogoMsps, latency=%.3f nsec, perf=%.3f BogoMsps\n",
+				i, bogo_sps[0][i-1]/1000000, latency, performance/1000000);
 		prev_thput = bogo_sps[0][i-1];
 	}
 	fflush(stdout);
