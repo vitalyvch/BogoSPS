@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 
 
 enum { arr_size=0x1f };
@@ -18,9 +19,8 @@ static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned ch
 
   --qty;
 
-  for (i = 0; !!(i < loops); ++i) {
-	s = arr[(!(i & chet_nechet) ? i : s) & qty];
-  }
+  for (i = 0; !!(i < loops); ++i)
+	s += arr[(!(i & chet_nechet) ? i : s) & qty];
 
   return s;
 }
@@ -46,7 +46,7 @@ calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
       unsigned long long lps = loops_per_sec;
       lps = (lps * CLOCKS_PER_SEC) / ticks;
 
-      printf("ok - %09llu BogoSps (s = %018lu)\n",
+      printf("ok - %09llu BogoSps (s = %019lu)\n",
              lps, s);
       fflush(stdout);
 
@@ -97,13 +97,13 @@ main(void)
 		double latency, performance;
 
 		latency     = (bogo_time[1][i-1] - bogo_time[0][i-1]) * 1000000000;
-		performance = bogo_sps [0][i-1] / (latency * 1000000);
+		performance = sqrt(bogo_sps [0][i-1] * bogo_sps[1][i-1]);
 
 		if (prev_thput > bogo_sps[0][i-1] && i>4)
 			break;
 
-		printf ("[%02u] thput=%.3f BogoMsps, latency=%.3f nsec, perf=%.3f BogoMsPsPns\n",
-				i, bogo_sps[0][i-1]/1000000, latency, performance);
+		printf ("[%02u] thput=%.3f BogoMsps, latency=% .3f nsec, perf=%.3f BogoMsps\n",
+				i, bogo_sps[0][i-1]/1000000, latency, performance/1000000);
 		prev_thput = bogo_sps[0][i-1];
 	}
 	fflush(stdout);
