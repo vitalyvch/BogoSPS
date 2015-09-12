@@ -7,11 +7,11 @@
 #include <math.h>
 
 
-enum { arr_size=0x1f };
+enum { arr_size=0xffff };
 static long arr[arr_size+1];
 
 static double bogo_sps [2][arr_size+1] = {};
-static double bogo_time[2][arr_size+1] = {};
+static double bogo_time_psec[2][arr_size+1] = {};
 
 static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned chet_nechet)
 {
@@ -35,7 +35,7 @@ calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
 {
   unsigned long loops_per_sec = 1;
 
-  printf("[%02u] Calibrating delay loop.. ", qty);
+  printf("[%05u] Calibrating delay loop.. ", qty);
   fflush(stdout);
   
   while ((loops_per_sec <<= 1)) {
@@ -50,12 +50,12 @@ calibrating_delay_loop(unsigned qty, unsigned chet_nechet)
       unsigned long long lps = loops_per_sec;
       lps = (lps * CLOCKS_PER_SEC) / ticks;
 
-      printf("ok - %09llu BogoSps (s = %018lu)\n",
+      printf("ok - %09llu BogoSps (s = %019lu)\n",
              lps, s);
       fflush(stdout);
 
 	  bogo_sps [chet_nechet][qty-1] = lps;
-	  bogo_time[chet_nechet][qty-1] = 1.0 / bogo_sps[chet_nechet][qty-1];
+	  bogo_time_psec[chet_nechet][qty-1] = 1000000000000.0 / bogo_sps[chet_nechet][qty-1];
       return 0;
     }
   }
@@ -84,8 +84,13 @@ int
 main(void)
 {
 	int res = 0;
+	int res_L1 = 0;
 	unsigned i;
-	double prev_thput = 0;
+	unsigned n = 0;
+
+	double avg_thput = 0;
+	double avg_latency = 0;
+	double avg_perf = 0;
 
 	srandom(time(NULL));
 
@@ -100,16 +105,39 @@ main(void)
 	for (i=1; i<=(arr_size+1); i*=2) {
 		double latency, performance;
 
-		latency     = (bogo_time[1][i-1] - bogo_time[0][i-1]) * 1000000000;
+		latency     = bogo_time_psec[1][i-1] - bogo_time_psec[0][i-1];
 		performance = sqrt(bogo_sps [0][i-1] * bogo_sps[1][i-1]);
 
-		if (prev_thput > bogo_sps[0][i-1] && i>4)
-			break;
-
-		printf ("[%02u] thput=%.3f BogoMsps, latency=%.3f nsec, perf=%.3f BogoMsps\n",
+		printf ("[%05u] thput=%.3f BogoMsps, latency=%.3f psec, perf=%.3f BogoMsps\n",
 				i, bogo_sps[0][i-1]/1000000, latency, performance/1000000);
-		prev_thput = bogo_sps[0][i-1];
+
+#define THRESHOLD (0.05)
+
+		if (0==n || 1==n || (fabs((avg_thput/n)-bogo_sps[0][i-1]) < (THRESHOLD * (avg_thput/n)))) {
+			avg_thput += bogo_sps[0][i-1];
+			avg_latency += latency;
+			avg_perf += performance;
+			n++;
+		} else {
+			printf("\t==== Results: ====\n");
+			printf("It looks like we have L1 cache size: %u * %zu (sizeof(long)) = %zu (bytes)\n",
+			       i/2, sizeof(long), i*sizeof(long)/2);
+			printf("thput=%.3f BogoMsps, latency=%.3f psec, perf=%.3f BogoMsps\n",
+			       avg_thput/(n*1000000), avg_latency/n, avg_perf/(n*1000000));
+			res_L1 = 1; //We have found results successfully
+			break;
+		}
 	}
+
+	if(!res_L1) {
+		res |= 1;
+
+		printf("\t==== Results: ====\n");
+		printf("We run on architecture with unexpected behaviour (like Qemu or other simulator).\n");
+		printf("thput=%.3f BogoMsps, latency=%.3f psec, perf=%.3f BogoMsps\n",
+			   avg_thput/(n*1000000), avg_latency/n, avg_perf/(n*1000000));
+	}
+
 	fflush(stdout);
 
 	return res;
