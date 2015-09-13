@@ -20,10 +20,17 @@ static inline unsigned long delay(unsigned long loops, unsigned qty, unsigned ch
   --qty;
 
   for (i = 0; !!(i < loops); ++i) {
-	if (!(i & chet_nechet))
+	static const void *T[2] = { &&Label_1i, &&Label_0s };
+
+	goto *T[!(i & chet_nechet)];
+
+	Label_1i:
 		s += arr[i & qty];
-	else
+		continue;
+
+	Label_0s:
 		s += arr[s & qty];
+		continue;
   }
 
   return s;

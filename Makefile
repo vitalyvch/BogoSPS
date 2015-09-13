@@ -10,9 +10,9 @@ LDFLAGS = -lm
 
 
 bogosps.nat bogosps.arm: bogosps.c Makefile
-	$(CC) $(DEFS) $(CFLAGS) -o bogosps.nat bogosps.c $(LDFLAGS)
+	$(CC) $(DEFS) $(CFLAGS) -o bogosps.nat -Wa,-adhlns=bogosps.nat.lst bogosps.c $(LDFLAGS)
 	objdump -d --source bogosps.nat > bogosps.nat.asm
-	arm-linux-gnueabi-gcc $(DEFS) $(CFLAGS) -o bogosps.arm bogosps.c $(LDFLAGS)
+	arm-linux-gnueabi-gcc $(DEFS) $(CFLAGS) -o bogosps.arm  -Wa,-adhlns=bogosps.arm.lst bogosps.c $(LDFLAGS)
 	arm-linux-gnueabi-objdump -d --source bogosps.arm > bogosps.arm.asm
 
 clean:

@@ -1,54 +1,54 @@
  *** chet_nechet = 00
-[00001] Calibrating delay loop.. ok - 500130337 BogoSps (s = 0458942608769548288)
-[00002] Calibrating delay loop.. ok - 499073110 BogoSps (s = 0525991356917612544)
-[00004] Calibrating delay loop.. ok - 508940269 BogoSps (s = 0588706348846284800)
-[00008] Calibrating delay loop.. ok - 510742354 BogoSps (s = 0519242908478472192)
-[00016] Calibrating delay loop.. ok - 502576593 BogoSps (s = 0582377774732279808)
-[00032] Calibrating delay loop.. ok - 507212665 BogoSps (s = 0559249501605330944)
-[00064] Calibrating delay loop.. ok - 506584743 BogoSps (s = 0576314389993357312)
-[00128] Calibrating delay loop.. ok - 508613370 BogoSps (s = 0591057772880068608)
-[00256] Calibrating delay loop.. ok - 509213007 BogoSps (s = 0587897315189063680)
-[00512] Calibrating delay loop.. ok - 509499575 BogoSps (s = 0599989530957709312)
-[01024] Calibrating delay loop.. ok - 514725861 BogoSps (s = 0587973621567717376)
-[02048] Calibrating delay loop.. ok - 508609997 BogoSps (s = 0582892803187277824)
-[04096] Calibrating delay loop.. ok - 475468441 BogoSps (s = 0584637141790883840)
-[08192] Calibrating delay loop.. ok - 476143562 BogoSps (s = 0578691363997155328)
-[16384] Calibrating delay loop.. ok - 470625233 BogoSps (s = 0575965245988798464)
-[32768] Calibrating delay loop.. ok - 468773580 BogoSps (s = 0577446072667930624)
-[65536] Calibrating delay loop.. ok - 468925075 BogoSps (s = 0577244252485312512)
+[00001] Calibrating delay loop.. ok - 372196872 BogoSps (s = 0989035921179410432)
+[00002] Calibrating delay loop.. ok - 373009900 BogoSps (s = 0858056937554575360)
+[00004] Calibrating delay loop.. ok - 373920479 BogoSps (s = 0881745874235949056)
+[00008] Calibrating delay loop.. ok - 373646969 BogoSps (s = 0651680686469545984)
+[00016] Calibrating delay loop.. ok - 372549162 BogoSps (s = 0639819839774392320)
+[00032] Calibrating delay loop.. ok - 372952116 BogoSps (s = 0632724909998473216)
+[00064] Calibrating delay loop.. ok - 372670190 BogoSps (s = 0573915506927468544)
+[00128] Calibrating delay loop.. ok - 372844887 BogoSps (s = 0560071931215216640)
+[00256] Calibrating delay loop.. ok - 371491715 BogoSps (s = 0560552723989135360)
+[00512] Calibrating delay loop.. ok - 373848355 BogoSps (s = 0578373944389664768)
+[01024] Calibrating delay loop.. ok - 373394633 BogoSps (s = 0584148444387999744)
+[02048] Calibrating delay loop.. ok - 371730160 BogoSps (s = 0572960664739119104)
+[04096] Calibrating delay loop.. ok - 349613191 BogoSps (s = 0574529081105711104)
+[08192] Calibrating delay loop.. ok - 349565387 BogoSps (s = 0571613208621744128)
+[16384] Calibrating delay loop.. ok - 349715673 BogoSps (s = 0576631712325959680)
+[32768] Calibrating delay loop.. ok - 345423207 BogoSps (s = 0577078664449851392)
+[65536] Calibrating delay loop.. ok - 346548311 BogoSps (s = 0577269980866584576)
  *** chet_nechet = 01
-[00001] Calibrating delay loop.. ok - 258915146 BogoSps (s = 0229471304384774144)
-[00002] Calibrating delay loop.. ok - 258958107 BogoSps (s = 0229471304384774144)
-[00004] Calibrating delay loop.. ok - 258746686 BogoSps (s = 0279815657971777536)
-[00008] Calibrating delay loop.. ok - 259023075 BogoSps (s = 0227189255401551238)
-[00016] Calibrating delay loop.. ok - 258673131 BogoSps (s = 0326003700097569882)
-[00032] Calibrating delay loop.. ok - 258847236 BogoSps (s = 0292228275151341764)
-[00064] Calibrating delay loop.. ok - 258854974 BogoSps (s = 0301198774554524625)
-[00128] Calibrating delay loop.. ok - 258637491 BogoSps (s = 0313403961232933581)
-[00256] Calibrating delay loop.. ok - 258479348 BogoSps (s = 0290349287555355726)
-[00512] Calibrating delay loop.. ok - 258562505 BogoSps (s = 0302885939361180296)
-[01024] Calibrating delay loop.. ok - 258987089 BogoSps (s = 0288344527802623953)
-[02048] Calibrating delay loop.. ok - 258298033 BogoSps (s = 0285353996376102805)
-[04096] Calibrating delay loop.. ok - 302936773 BogoSps (s = 0582371585181843550)
-[08192] Calibrating delay loop.. ok - 289287751 BogoSps (s = 0577481336528985921)
-[16384] Calibrating delay loop.. ok - 260172885 BogoSps (s = 0289277354869686654)
-[32768] Calibrating delay loop.. ok - 206984460 BogoSps (s = 0288997016830059015)
-[65536] Calibrating delay loop.. ok - 183906003 BogoSps (s = 0288857263446396592)
+[00001] Calibrating delay loop.. ok - 097404553 BogoSps (s = 0247258980294852608)
+[00002] Calibrating delay loop.. ok - 097479611 BogoSps (s = 0247258979806917871)
+[00004] Calibrating delay loop.. ok - 097408088 BogoSps (s = 0237805572918064122)
+[00008] Calibrating delay loop.. ok - 097375650 BogoSps (s = 0196152619430491375)
+[00016] Calibrating delay loop.. ok - 097570033 BogoSps (s = 0177895027845591067)
+[00032] Calibrating delay loop.. ok - 097510631 BogoSps (s = 0164547465568160170)
+[00064] Calibrating delay loop.. ok - 097448329 BogoSps (s = 0136129264656979184)
+[00128] Calibrating delay loop.. ok - 097038776 BogoSps (s = 0138071848635053034)
+[00256] Calibrating delay loop.. ok - 097592309 BogoSps (s = 0135883060434896122)
+[00512] Calibrating delay loop.. ok - 097388227 BogoSps (s = 0140611231377969538)
+[01024] Calibrating delay loop.. ok - 097434251 BogoSps (s = 0146467889370004991)
+[02048] Calibrating delay loop.. ok - 097490515 BogoSps (s = 0143099112546399200)
+[04096] Calibrating delay loop.. ok - 112901572 BogoSps (s = 0143852573165907024)
+[08192] Calibrating delay loop.. ok - 123196563 BogoSps (s = 0142645726022107201)
+[16384] Calibrating delay loop.. ok - 124470678 BogoSps (s = 0143540384096932610)
+[32768] Calibrating delay loop.. ok - 118343383 BogoSps (s = 0144506977081280136)
+[65536] Calibrating delay loop.. ok - 112867678 BogoSps (s = 0144316679833871020)
  *** SUMMARY
-[00001] thput=500.130 BogoMsps, latency=1862.790 psec, perf=359.849 BogoMsps
-[00002] thput=499.073 BogoMsps, latency=1857.914 psec, perf=359.498 BogoMsps
-[00004] thput=508.940 BogoMsps, latency=1899.917 psec, perf=362.886 BogoMsps
-[00008] thput=510.742 BogoMsps, latency=1902.726 psec, perf=363.722 BogoMsps
-[00016] thput=502.577 BogoMsps, latency=1876.136 psec, perf=360.559 BogoMsps
-[00032] thput=507.213 BogoMsps, latency=1891.723 psec, perf=362.340 BogoMsps
-[00064] thput=506.585 BogoMsps, latency=1889.164 psec, perf=362.121 BogoMsps
-[00128] thput=508.613 BogoMsps, latency=1900.285 psec, perf=362.693 BogoMsps
-[00256] thput=509.213 BogoMsps, latency=1904.966 psec, perf=362.796 BogoMsps
-[00512] thput=509.500 BogoMsps, latency=1904.827 psec, perf=362.957 BogoMsps
-[01024] thput=514.726 BogoMsps, latency=1918.415 psec, perf=365.113 BogoMsps
-[02048] thput=508.610 BogoMsps, latency=1905.354 psec, perf=362.454 BogoMsps
-[04096] thput=475.468 BogoMsps, latency=1197.830 psec, perf=379.522 BogoMsps
+[00001] thput=372.197 BogoMsps, latency=7579.710 psec, perf=190.404 BogoMsps
+[00002] thput=373.010 BogoMsps, latency=7577.662 psec, perf=190.685 BogoMsps
+[00004] thput=373.920 BogoMsps, latency=7591.723 psec, perf=190.848 BogoMsps
+[00008] thput=373.647 BogoMsps, latency=7593.185 psec, perf=190.746 BogoMsps
+[00016] thput=372.549 BogoMsps, latency=7564.839 psec, perf=190.656 BogoMsps
+[00032] thput=372.952 BogoMsps, latency=7573.983 psec, perf=190.701 BogoMsps
+[00064] thput=372.670 BogoMsps, latency=7578.511 psec, perf=190.568 BogoMsps
+[00128] thput=372.845 BogoMsps, latency=7623.078 psec, perf=190.211 BogoMsps
+[00256] thput=371.492 BogoMsps, latency=7554.859 psec, perf=190.407 BogoMsps
+[00512] thput=373.848 BogoMsps, latency=7593.300 psec, perf=190.810 BogoMsps
+[01024] thput=373.395 BogoMsps, latency=7585.200 psec, perf=190.739 BogoMsps
+[02048] thput=371.730 BogoMsps, latency=7567.285 psec, perf=190.368 BogoMsps
+[04096] thput=349.613 BogoMsps, latency=5996.969 psec, perf=198.675 BogoMsps
 	==== Results: ====
 It looks like we have L1 cache size: 2048 * 8 (sizeof(long)) = 16384 (bytes)
 thput=(min, avg, max) BogoMsps, 	latency=(min, avg, max) psec, 	perf=(min, avg, max) BogoMsps
-thput=(499.073, 507.160, 514.726) BogoMsps, latency=(1857.914, 1892.851, 1918.415) psec, perf=(359.498, 362.249, 365.113) BogoMsps
+thput=(371.492, 372.855, 373.920) BogoMsps, latency=(7554.859, 7581.944, 7623.078) psec, perf=(190.211, 190.595, 190.848) BogoMsps
